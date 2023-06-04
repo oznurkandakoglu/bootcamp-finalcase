@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - User Login/Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #888;
+        }
+
+        .link {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1><br>Weather App</h1>
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form action="/api/users/register" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <p class="message">Don't have an account? <a href="#" onclick="showRegisterForm()" class="link">Register here</a></p>
+        </form>
+    </div>
+    <div id="registerForm" style="display: none;">
+        <h2>Register</h2>
+        <form action="@{api/users/register}" th:object="${user}" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" th:field="*{username}" class="form-control" placeholder="Username" required>
+            <label for="password">Password:</label>
+            <input type="password" th:field="*{password}" class="form-control" placeholder="Password" required>
+            <label for="email">Email:</label>
+            <input type="email" th:field="*{email}" class="form-control" placeholder="Email" required>
+            <label for="phone">Phone:</label>
+            <input type="text" th:field="*{phoneNumber}" class="form-control" placeholder="Phone" required>
+            <button type="submit">Register</button>
+            <p class="message">Already have an account? <a href="#" onclick="showLoginForm()" class="link">Login here</a></p>
+        </form>
+    </div>
+</div>
+
+<script>
+    function showRegisterForm() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registerForm').style.display = 'block';
+    }
+
+    function showLoginForm() {
+        document.getElementById('registerForm').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+    }
+</script>
+</body>
+</html>
