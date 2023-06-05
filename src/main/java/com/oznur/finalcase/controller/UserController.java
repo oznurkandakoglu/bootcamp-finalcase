@@ -1,6 +1,7 @@
 package com.oznur.finalcase.controller;
 
 import com.oznur.finalcase.controller.contract.UserControllerContract;
+import com.oznur.finalcase.controller.contract.impl.UserControllerContractImpl;
 import com.oznur.finalcase.dto.*;
 import com.oznur.finalcase.general.RestResponse;
 import com.oznur.finalcase.model.WeatherDTO;
@@ -19,11 +20,6 @@ public class UserController {
 
     private final UserControllerContract userControllerContract;
 
-    /*@PostMapping("/register")
-    public ResponseEntity<RestResponse<UserDTO>> save(@RequestBody UserRegisterRequest userRegisterRequest){
-        UserDTO userDTO = userControllerContract.save(userRegisterRequest);
-        return ResponseEntity.ok(RestResponse.of(userDTO));
-    }*/
     @GetMapping
     public ResponseEntity<RestResponse<List<UserDTO>>> findAll(){
         List<UserDTO> userDTOList = userControllerContract.findAll();
