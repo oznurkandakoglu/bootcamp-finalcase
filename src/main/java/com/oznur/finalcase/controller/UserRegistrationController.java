@@ -1,7 +1,7 @@
 package com.oznur.finalcase.controller;
 
 import com.oznur.finalcase.auth.AuthenticationRequest;
-import com.oznur.finalcase.auth.LoginRequest;
+import com.oznur.finalcase.auth.LoginAuthenticationRequest;
 import com.oznur.finalcase.config.JwtService;
 import com.oznur.finalcase.dto.UserDTO;
 import com.oznur.finalcase.entity.User;
@@ -42,7 +42,7 @@ public class UserRegistrationController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<RestResponse<String>> authenticate(@RequestBody LoginRequest request) {
+    public ResponseEntity<RestResponse<String>> authenticate(@RequestBody LoginAuthenticationRequest request) {
         authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
         var user = userRepository.findByUsername(request.getUsername()).orElseThrow();
