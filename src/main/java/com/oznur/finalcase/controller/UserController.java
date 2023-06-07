@@ -41,7 +41,6 @@ public class UserController {
     @GetMapping("/username/{username}")
     public ResponseEntity<RestResponse<UserDTO>> findByUsername(@PathVariable String username){
         UserDTO userDTO = userControllerContract.findByUsername(username);
-
         return ResponseEntity.ok(RestResponse.of(userDTO));
     }
 

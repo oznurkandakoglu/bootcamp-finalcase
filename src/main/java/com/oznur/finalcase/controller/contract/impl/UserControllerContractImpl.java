@@ -6,6 +6,7 @@ import com.oznur.finalcase.dto.UserDeleteRequest;
 import com.oznur.finalcase.dto.UserRegisterRequest;
 import com.oznur.finalcase.dto.UserUpdateRequest;
 import com.oznur.finalcase.entity.User;
+import com.oznur.finalcase.exception.CityNotFoundException;
 import com.oznur.finalcase.exception.IdNotFoundException;
 import com.oznur.finalcase.exception.SavedCitiesNotFoundException;
 import com.oznur.finalcase.exception.UserNotFoundException;
@@ -133,7 +134,7 @@ public class UserControllerContractImpl implements UserControllerContract {
         }
         catch (Exception e){
             kafkaProducerService.sendMessage("City not found!", "errorLogs");
-            throw new UserNotFoundException("City not found!");
+            throw new CityNotFoundException("City not found!");
         }
 
     }

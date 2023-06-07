@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserRegistrationService {
 
-    private UserEntityService userEntityService;
+    private final UserEntityService userEntityService;
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public UserRegistrationService(UserEntityService userEntityService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userEntityService = userEntityService;

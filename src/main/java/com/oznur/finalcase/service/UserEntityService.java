@@ -37,7 +37,6 @@ public class UserEntityService extends BaseEntityService<User, UserRepository> {
     public UserDTO update(Long id, UserUpdateRequest userUpdateRequest){
         User user = userRepository.findById(id).orElseThrow();
         user.setUsername(userUpdateRequest.getUsername());
-        user.setPassword(userUpdateRequest.getPassword());
         userRepository.save(user);
         return UserMapper.INSTANCE.convertToUserDTO(user);
     }
