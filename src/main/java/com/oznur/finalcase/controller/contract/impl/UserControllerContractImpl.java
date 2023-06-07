@@ -133,8 +133,8 @@ public class UserControllerContractImpl implements UserControllerContract {
             return UserMapper.INSTANCE.convertToUserDTO(user);
         }
         catch (Exception e){
-            kafkaProducerService.sendMessage("City not found!", "errorLogs");
-            throw new CityNotFoundException("City not found!");
+            kafkaProducerService.sendMessage("User not found!", "errorLogs");
+            throw new UserNotFoundException("User not found!");
         }
 
     }
