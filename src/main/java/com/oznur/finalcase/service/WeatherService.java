@@ -1,13 +1,8 @@
 package com.oznur.finalcase.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.oznur.finalcase.model.Weather;
 import com.oznur.finalcase.model.WeatherDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.io.DataInput;
 
 @Service
 public class WeatherService {

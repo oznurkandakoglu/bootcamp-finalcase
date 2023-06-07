@@ -35,10 +35,6 @@ public class User extends BaseEntity implements UserDetails {
     private String email;
 
     @NotNull
-    @Column(name = "PHONE_NUMBER", length = 100, nullable = false)
-    private String phoneNumber;
-
-    @NotNull
     @Column(name = "PASSWORD", length = 100,nullable = false)
     private String password;
 

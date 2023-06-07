@@ -5,7 +5,6 @@ import com.oznur.finalcase.dto.UserDeleteRequest;
 import com.oznur.finalcase.dto.UserRegisterRequest;
 import com.oznur.finalcase.dto.UserUpdateRequest;
 import com.oznur.finalcase.model.WeatherDTO;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Map;

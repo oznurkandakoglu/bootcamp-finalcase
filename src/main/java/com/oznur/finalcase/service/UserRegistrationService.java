@@ -34,7 +34,6 @@ public class UserRegistrationService {
         User user = new User();
         user.setUsername(authRequestDto.getUsername());
         user.setEmail(authRequestDto.getEmail());
-        user.setPhoneNumber(authRequestDto.getPhoneNumber());
         user.setPassword(bCryptPasswordEncoder.encode(authRequestDto.getPassword()));
         return user;
     }

@@ -1,12 +1,14 @@
 package com.oznur.finalcase.controller;
 
-import com.oznur.finalcase.model.Weather;
+import com.oznur.finalcase.exception.CityNotFoundException;
 import com.oznur.finalcase.model.WeatherDTO;
 import com.oznur.finalcase.service.WeatherService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/weather")
@@ -23,10 +25,13 @@ public class WeatherController {
     //@Secured("USER")
     @PreAuthorize("hasAnyRole('USER')")
     public WeatherDTO getFromController(@PathVariable String cityName) {
-        log.info(cityName);
-        log.error(cityName);
-        log.warn(cityName);
-        return weatherService.getWeather(cityName);
+        try{
+            return weatherService.getWeather(cityName);
+        }
+        catch (Exception e){
+            throw new CityNotFoundException("City not found!");
+        }
+
     }
 
 }

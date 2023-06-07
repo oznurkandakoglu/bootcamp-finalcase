@@ -1,13 +1,10 @@
 package com.oznur.finalcase.controller;
 
 import com.oznur.finalcase.controller.contract.UserControllerContract;
-import com.oznur.finalcase.controller.contract.impl.UserControllerContractImpl;
 import com.oznur.finalcase.dto.*;
 import com.oznur.finalcase.general.RestResponse;
-import com.oznur.finalcase.kafka.producer.KafkaProducerService;
 import com.oznur.finalcase.model.WeatherDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,10 +17,10 @@ import java.util.Map;
 public class UserController {
 
     private final UserControllerContract userControllerContract;
-    private  final KafkaProducerService kafkaProducerService;
+
+
     @GetMapping
     public ResponseEntity<RestResponse<List<UserDTO>>> findAll(){
-        kafkaProducerService.sendMessage("find all method", "infoLogs");
         List<UserDTO> userDTOList = userControllerContract.findAll();
         return  ResponseEntity.ok(RestResponse.of(userDTOList));
     }
@@ -31,22 +28,20 @@ public class UserController {
 
     @DeleteMapping
     public ResponseEntity<RestResponse<String>> delete(@RequestBody UserDeleteRequest userDeleteRequest){
-        kafkaProducerService.sendMessage("delete method", "errorLogs");
         userControllerContract.delete(userDeleteRequest);
         return ResponseEntity.ok(RestResponse.of("Deleted!"));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<RestResponse<UserDTO>> findById(@PathVariable Long id){
-        kafkaProducerService.sendMessage("find by id method", "warnLogs");
         UserDTO userDTO = userControllerContract.findById(id);
         return ResponseEntity.ok(RestResponse.of(userDTO));
     }
 
-
     @GetMapping("/username/{username}")
     public ResponseEntity<RestResponse<UserDTO>> findByUsername(@PathVariable String username){
         UserDTO userDTO = userControllerContract.findByUsername(username);
+
         return ResponseEntity.ok(RestResponse.of(userDTO));
     }
 
@@ -56,19 +51,19 @@ public class UserController {
         return ResponseEntity.ok(RestResponse.of(userDTO));
     }
 
-    @GetMapping("/weatherdata/savedcities/{username}")
+    @GetMapping("/savedcities/{username}")
     public ResponseEntity<RestResponse<Map<String,WeatherDTO>>> getSavedCitiesWeatherDataOfUser(@PathVariable String username){
         Map<String, WeatherDTO> userMap = userControllerContract.getUsersSavedCitiesWeatherDTO(username);
         return ResponseEntity.ok(RestResponse.of(userMap));
     }
 
-    @PostMapping("/save/savedcities/{username}")
+    @PostMapping("/savedcities/save/{username}")
     public ResponseEntity<RestResponse<UserDTO>> addSavedCityToUser(@PathVariable String username, @RequestBody UserSaveCityRequest userSaveCityRequest){
         UserDTO userDTO = userControllerContract.addSavedCityToUser(username, userSaveCityRequest.getCity());
         return ResponseEntity.ok(RestResponse.of(userDTO));
     }
 
-    @DeleteMapping("/delete/savedcities/{username}")
+    @DeleteMapping("/savedcities/delete/{username}")
     public ResponseEntity<RestResponse<UserDTO>> deleteSavedCityFromUser(@PathVariable String username, @RequestBody UserDeleteCityRequest userDeleteCityRequest){
         UserDTO userDTO = userControllerContract.deleteSavedCityFromUser(username, userDeleteCityRequest.getCity());
         return ResponseEntity.ok(RestResponse.of(userDTO));

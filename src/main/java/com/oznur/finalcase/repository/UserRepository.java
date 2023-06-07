@@ -1,6 +1,5 @@
 package com.oznur.finalcase.repository;
 
-import com.oznur.finalcase.dto.UserDTO;
 import com.oznur.finalcase.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

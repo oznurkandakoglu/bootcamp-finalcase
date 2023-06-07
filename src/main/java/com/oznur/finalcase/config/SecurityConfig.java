@@ -1,6 +1,5 @@
 package com.oznur.finalcase.config;
 
-import com.oznur.finalcase.enums.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,7 +26,6 @@ public class SecurityConfig {
                 .disable()
                 .authorizeHttpRequests()
                 .requestMatchers( "/api/v1/auth/**",
-                        "/api/v1/users/**",
                         "/swagger-ui/**",
                         "/configuration/ui",
                         "/swagger-resources/",
@@ -36,6 +34,7 @@ public class SecurityConfig {
                         "/v3/api-docs/**")
                 .permitAll()
                 //.requestMatchers("/api/v1/weather/**").hasAnyRole("USER")
+                .requestMatchers("/api/v1/users/**").hasAnyRole("USER")
                 .anyRequest()
                 .authenticated()
                 .and()

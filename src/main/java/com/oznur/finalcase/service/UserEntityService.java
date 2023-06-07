@@ -5,7 +5,6 @@ import com.oznur.finalcase.dto.UserDeleteRequest;
 import com.oznur.finalcase.dto.UserUpdateRequest;
 import com.oznur.finalcase.entity.User;
 import com.oznur.finalcase.general.BaseEntityService;
-import com.oznur.finalcase.kafka.producer.KafkaProducerService;
 import com.oznur.finalcase.mapper.UserMapper;
 import com.oznur.finalcase.model.WeatherDTO;
 import com.oznur.finalcase.repository.UserRepository;
@@ -17,22 +16,18 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-
 public class UserEntityService extends BaseEntityService<User, UserRepository> {
 
     private final UserRepository userRepository;
     private final WeatherService weatherService;
-    private final KafkaProducerService kafkaProducerService;
 
-    public UserEntityService(UserRepository repository, UserRepository userRepository, WeatherService weatherService, KafkaProducerService kafkaProducerService) {
+    public UserEntityService(UserRepository repository, UserRepository userRepository, WeatherService weatherService) {
         super(repository);
         this.userRepository = userRepository;
         this.weatherService = weatherService;
-        this.kafkaProducerService = kafkaProducerService;
     }
 
     public User findByUsername(String username){
-
         return userRepository.findByUsername(username).orElseThrow();
     }
 
@@ -49,6 +44,7 @@ public class UserEntityService extends BaseEntityService<User, UserRepository> {
     public Map<String, WeatherDTO> getUsersSavedCitiesWeatherDTO(String username) {
         User user = findByUsername(username);
         List<String> cities = user.getSavedCities();
+
         Map<String, WeatherDTO> citiesData = new HashMap<>();
 
         for (String city : cities) {
