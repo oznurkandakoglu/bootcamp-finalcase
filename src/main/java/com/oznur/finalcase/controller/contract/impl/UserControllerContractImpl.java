@@ -36,11 +36,12 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public UserDTO findById(Long id) {
         try{
-            kafkaProducerService.sendMessage("Find by id method called!", "logInfo");
+            kafkaProducerService.sendMessage("Find by id method called!", "infoLogs");
             User user = userEntityService.findById(id).orElseThrow();
             return UserMapper.INSTANCE.convertToUserDTO(user);
         }
         catch (Exception e){
+            kafkaProducerService.sendMessage("Id not found!", "errorLogs");
             throw new IdNotFoundException("Id not found!");
         }
 
@@ -50,10 +51,12 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public UserDTO findByUsername(String username) {
         try {
+            kafkaProducerService.sendMessage("Find by username method called!", "infoLogs");
             User user = userEntityService.findByUsername(username);
             return UserMapper.INSTANCE.convertToUserDTO(user);
         }
         catch (Exception e){
+            kafkaProducerService.sendMessage("User not found!", "errorLogs");
             throw new UserNotFoundException("User not found!");
         }
 
@@ -62,10 +65,12 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public void delete(UserDeleteRequest userDeleteRequest) {
         try{
+            kafkaProducerService.sendMessage("Delete method called!", "infoLogs");
             User user = userEntityService.findByUsername(userDeleteRequest.getUsername());
             userEntityService.delete(user);
         }
         catch (Exception e){
+            kafkaProducerService.sendMessage("User not found!", "errorLogs");
             throw new UserNotFoundException("User not found!");
         }
 
@@ -74,9 +79,11 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public UserDTO update(Long id, UserUpdateRequest userUpdateRequest){
         try{
+            kafkaProducerService.sendMessage("Update method called!", "infoLogs");
             return userEntityService.update(id, userUpdateRequest);
         }
         catch (Exception e){
+            kafkaProducerService.sendMessage("Id not found!", "errorLogs");
             throw new IdNotFoundException("Id not found!");
         }
 
@@ -84,6 +91,7 @@ public class UserControllerContractImpl implements UserControllerContract {
 
     @Override
     public UserDTO save(UserRegisterRequest userRegisterRequest) {
+        kafkaProducerService.sendMessage("Save method called!", "infoLogs");
         User user = UserMapper.INSTANCE.convertToUser(userRegisterRequest);
         user = userEntityService.save(user);
         return UserMapper.INSTANCE.convertToUserDTO(user);
@@ -92,10 +100,12 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public Map<String, WeatherDTO> getUsersSavedCitiesWeatherDTO(String username) {
         try{
+            kafkaProducerService.sendMessage("Get user saved cities method called!", "infoLogs");
             return userEntityService.getUsersSavedCitiesWeatherDTO(username);
         }
         catch(Exception e){
-            throw new SavedCitiesNotFoundException("This user has no saved cities.");
+            kafkaProducerService.sendMessage("This user has no saved cities!", "errorLogs");
+            throw new SavedCitiesNotFoundException("This user has no saved cities!");
         }
 
     }
@@ -103,10 +113,12 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public UserDTO addSavedCityToUser(String username, String city) {
         try{
+            kafkaProducerService.sendMessage("Add saved city to user method called!", "infoLogs");
             User user = userEntityService.addSavedCityToUser(username,city);
             return UserMapper.INSTANCE.convertToUserDTO(user);
         }
         catch (Exception e){
+            kafkaProducerService.sendMessage("User not found!", "errorLogs");
             throw new UserNotFoundException("User not found!");
         }
 
@@ -115,10 +127,12 @@ public class UserControllerContractImpl implements UserControllerContract {
     @Override
     public UserDTO deleteSavedCityFromUser(String username, String city) {
         try{
+            kafkaProducerService.sendMessage("Delete saved city from user method called!", "infoLogs");
             User user = userEntityService.deleteSavedCityFromUser(username,city);
             return UserMapper.INSTANCE.convertToUserDTO(user);
         }
         catch (Exception e){
+            kafkaProducerService.sendMessage("City not found!", "errorLogs");
             throw new UserNotFoundException("City not found!");
         }
 
