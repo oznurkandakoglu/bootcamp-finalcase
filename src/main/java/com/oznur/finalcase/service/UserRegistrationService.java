@@ -30,7 +30,7 @@ public class UserRegistrationService {
         return this.userEntityService.save(user);
     }
 
-    private User createValidUser(AuthenticationRequest authRequestDto) {
+    public User createValidUser(AuthenticationRequest authRequestDto) {
         User user = new User();
         user.setUsername(authRequestDto.getUsername());
         user.setEmail(authRequestDto.getEmail());

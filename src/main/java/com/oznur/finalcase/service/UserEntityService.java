@@ -66,10 +66,11 @@ public class UserEntityService extends BaseEntityService<User, UserRepository> {
 
     public User deleteSavedCityFromUser(String username, String city) {
         User user = findByUsername(username);
-        List<String> cities = user.getSavedCities();
+        List<String> cities = new ArrayList<>(user.getSavedCities());
         cities.remove(city);
         user.setSavedCities(cities);
         userRepository.save(user);
         return user;
     }
+
 }
