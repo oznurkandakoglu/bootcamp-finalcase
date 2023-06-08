@@ -1,15 +1,12 @@
 package com.oznur.finalcase.service;
 
-import com.oznur.finalcase.auth.AuthenticationRequest;
+import com.oznur.finalcase.dto.AuthenticationRequest;
 import com.oznur.finalcase.entity.User;
 import com.oznur.finalcase.enums.Role;
-import com.oznur.finalcase.service.UserEntityService;
-import com.oznur.finalcase.service.UserRegistrationService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

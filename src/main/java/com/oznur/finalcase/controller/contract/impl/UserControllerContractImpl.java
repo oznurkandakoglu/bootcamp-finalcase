@@ -105,8 +105,8 @@ public class UserControllerContractImpl implements UserControllerContract {
             return userEntityService.getUsersSavedCitiesWeatherDTO(username);
         }
         catch(Exception e){
-            kafkaProducerService.sendMessage("User not found!", "errorLogs");
-            throw new UserNotFoundException("User not found!");
+            kafkaProducerService.sendMessage("This user has no saved cities!", "errorLogs");
+            throw new SavedCitiesNotFoundException("This user has no saved cities!");
         }
 
     }

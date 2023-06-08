@@ -26,7 +26,7 @@ public class WeatherController {
     @PreAuthorize("hasAnyRole('USER')")
     public WeatherDTO getFromController(@PathVariable String cityName) {
         try{
-            kafkaProducerService.sendMessage("Get from controller method called!", "infoLogs");
+            kafkaProducerService.sendMessage("Get weather controller method called!", "infoLogs");
             return weatherService.getWeather(cityName);
         }
         catch (Exception e){

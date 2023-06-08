@@ -1,7 +1,7 @@
 package com.oznur.finalcase.controller;
 
-import com.oznur.finalcase.auth.AuthenticationRequest;
-import com.oznur.finalcase.auth.LoginRequest;
+import com.oznur.finalcase.dto.AuthenticationRequest;
+import com.oznur.finalcase.dto.LoginRequest;
 import com.oznur.finalcase.controller.contract.UserRegistrationControllerContract;
 import com.oznur.finalcase.dto.UserDTO;
 import com.oznur.finalcase.general.RestResponse;

@@ -1,6 +1,6 @@
 package com.oznur.finalcase.service;
 
-import com.oznur.finalcase.auth.AuthenticationRequest;
+import com.oznur.finalcase.dto.AuthenticationRequest;
 import com.oznur.finalcase.entity.User;
 import com.oznur.finalcase.enums.Role;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

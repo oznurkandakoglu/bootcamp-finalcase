@@ -11,8 +11,6 @@ import java.util.Map;
 
 public interface UserControllerContract {
 
-    //ResponseEntity<String> loginUser(UserDTO userDTO);
-
     List<UserDTO> findAll();
     UserDTO findById(Long id);
     UserDTO findByUsername(String username);
