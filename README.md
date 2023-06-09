@@ -31,7 +31,8 @@ It is desired to write a weather application. This application will provide weat
 
 ## Test
 
-![test](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/1b15245f-45ff-4512-9ed5-475b4d6093fc)
+
+![test](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/d13ea586-3500-44f1-a0cd-1cbbc6ca31df)
 
 
 ## Swagger Screenshots
@@ -40,64 +41,79 @@ It is desired to write a weather application. This application will provide weat
 
 #### Register
 
-![register](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/e74d790c-d2a7-477a-88c1-6993f81c7fbe)
+
+![register](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/05bd5bb3-cc0d-470f-93cf-c50ef80eba01)
 
 #### Authenticate
 
-![auth](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/4667a4ab-a7ce-456d-b77f-be2c5fd4fe88)
+![auth](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/a1f83c01-ad4b-48ca-8ec9-dbcb34258ad2)
+
 
 ### Weather Controller
-![Screenshot_3](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/67eb2e85-e9ce-4b4f-954c-206166a8d2f7)
-![Screenshot_4](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/9ee65a70-0182-4bcb-a276-4217c89bf481)
+![Screenshot_3](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/98692c72-2eab-44b8-94fe-125296d34f2f)
+![Screenshot_4](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/1834953b-c58f-4ab3-825b-2dc61b5e7ab2)
+
 
 ### User Controller
 
 #### Find all users
 
-![getuser](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/a35605e1-7a14-43f1-8f9c-7d6c9b662217)
+![getuser](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/557ec747-ae6e-437a-9c48-d76ec5056cd6)
 
 #### Find by id
 
-![findbyid](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/bf3552a3-6fbb-495a-bde0-e8a73ca2f57e)
+![findbyid](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/4ec01002-fa80-4fda-9339-21b93a0db13c)
+
 
 #### Find by username
 
-![username](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/782c37a0-a419-4c5a-8687-cf7f36ae0b3c)
+![username](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/e0b17264-dd11-4c8c-a0cd-091a5b6c89cf)
+
 
 #### Saved Cities
 - If user has no saved cities
-![savedcities](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/e79236b0-efdf-46eb-96e2-f0627c7c2c30)
+![savedcities](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/ff5b0af0-7917-4773-9e32-ba9487661d69)
+
 
 - If user has saved cities
-![savedcities2](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/82709c6c-004c-4022-b76c-743b3f93bd97)
+![savedcities2](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/fab37064-5de3-40c7-b3dc-eeb6642692cb)
 
 
 #### Save City
 
-![Screenshot_2](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/b5fcd354-942c-4222-b2c4-2325cfd8ede3)
+![Screenshot_2](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/61a0dc51-364c-4b16-9581-7438dc2d9a22)
+
 
 
 #### Delete City
-![deletecity](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/9c4550df-99a4-44f4-b51e-f6795766332e)
+
+![deletecity](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/27e8c33d-c83c-41c4-88e6-83bb674feedd)
 
 
 #### Update user
-![Screenshot_14](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/d78cc9b7-0604-4a07-8bc4-d5c486eaa90b)
+![Screenshot_14](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/678a387d-ff5e-4df5-8a22-91a31a347622)
+
 
 #### Delete User
-![Screenshot_15](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/28044d1c-f709-4a28-9d93-00030c88eae8)
+
+![Screenshot_15](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/e46fc823-43fb-4cb3-b742-bd2918ce26bb)
 
 ## Logs
 Some examples logs are shown below.
-- ![Screenshot_1](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/9ccc5c3a-11f9-4427-9e88-70590adb2a94)
-- ![ss](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/72260e9c-6ff7-47a4-bedd-ffed7c70fb57)
-- ![Screenshot_6](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/645b6cb6-4dea-4a1e-8dc8-9fc928aed45d)
-- ![Screenshot_5](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/2f6c0117-432d-4906-868b-caf09bb69f2d)
-- ![Screenshot_4](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/91cd3522-c795-4c6f-bb21-c199dd91ee72)
-- ![Screenshot_5](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/4690bcba-1c27-4cde-945a-3c9e41c8a4da)
-- ![Screenshot_3](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/627be158-5db5-4d45-a19c-a207729df50e)
+### Error Logs
+- ![Screenshot_3](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/94e98cfa-ac4c-4fdc-995e-50bd436dbd06)
+- ![Screenshot_4](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/cba6efa5-c1a0-4d01-8800-a559cd007aac)
+- ![Screenshot_5](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/bc67a92f-773e-4864-885d-49e0a08748b3)
+- ![ss](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/aa4e77f2-0448-4f21-974e-ecf9ec8f76e9)
+- ![Screenshot_5](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/03aed418-bfab-4794-97bd-2d63241e5a7f)
+
+
+### Info Logs
+- ![Screenshot_6](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/332cade7-f130-4b9c-a5a8-7677b517690f)
+- ![Screenshot_1](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/d7fabf11-b138-4d60-b072-1779215cea40)
+
 
 ## Database
-![database](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/d0f5a441-d00c-4c46-b800-2029017a60f3)
 
+![database](https://github.com/oznurkandakoglu/bootcamp-finalcase/assets/73194842/7cd2a790-0236-4ee8-a588-8c458365b9f1)
 
